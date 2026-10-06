@@ -12,7 +12,7 @@ A small, provider-agnostic agent harness for Node.js, with evals for non-determi
 ## Install
 
 ```
-npm install harness-kit
+npm install llm-harness-kit
 ```
 
 Node 18+. ESM, with TypeScript types included.
@@ -20,7 +20,7 @@ Node 18+. ESM, with TypeScript types included.
 ## Use
 
 ```js
-import { runAgent } from 'harness-kit';
+import { runAgent } from 'llm-harness-kit';
 
 const res = await runAgent({
   model: myProviderAdapter, // async ({ messages, tools, signal }) => ({ text }) | ({ toolCalls: [{ id, name, args }] })
@@ -41,7 +41,7 @@ The model is any async function, so one adapter per provider (Claude, OpenAI, a 
 ## Evals
 
 ```js
-import { runEvals, formatReport } from 'harness-kit';
+import { runEvals, formatReport } from 'llm-harness-kit';
 
 const report = await runEvals(cases, (input) => ask(input), { trials: 20 });
 console.log(formatReport(report));

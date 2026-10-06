@@ -1,5 +1,5 @@
 {
-  "name": "@kwanzax/harness-kit",
+  "name": "harness-kit",
   "version": "0.1.0",
   "description": "A small, provider-agnostic agent harness: tool calling, agent loop, context trimming, structured outputs, timeouts and retries, plus evals for non-deterministic runs. Zero dependencies.",
   "type": "module",

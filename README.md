@@ -9,10 +9,18 @@ A small, provider-agnostic agent harness for Node.js, with evals for non-determi
 - **Designed for failure**: every model and tool call has a timeout (with an `AbortSignal` passed through) and model calls retry with exponential backoff and jitter. Errors marked `retryable: false` stop at once.
 - **Evals**: run each case N times and report pass rate, distinct failure reasons and p50 latency. A case that passes 3 of 5 runs is flaky, and that is the finding.
 
+## Install
+
+```
+npm install harness-kit
+```
+
+Node 18+. ESM, with TypeScript types included.
+
 ## Use
 
 ```js
-import { runAgent } from '@kwanzax/harness-kit';
+import { runAgent } from 'harness-kit';
 
 const res = await runAgent({
   model: myProviderAdapter, // async ({ messages, tools, signal }) => ({ text }) | ({ toolCalls: [{ id, name, args }] })
@@ -33,7 +41,7 @@ The model is any async function, so one adapter per provider (Claude, OpenAI, a 
 ## Evals
 
 ```js
-import { runEvals, formatReport } from '@kwanzax/harness-kit';
+import { runEvals, formatReport } from 'harness-kit';
 
 const report = await runEvals(cases, (input) => ask(input), { trials: 20 });
 console.log(formatReport(report));

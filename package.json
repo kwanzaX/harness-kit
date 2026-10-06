@@ -1,0 +1,19 @@
+{
+  "name": "@kwanzax/harness-kit",
+  "version": "0.1.0",
+  "description": "A small, provider-agnostic agent harness: tool calling, agent loop, context trimming, structured outputs, timeouts and retries, plus evals for non-deterministic runs. Zero dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "exports": { ".": { "types": "./index.d.ts", "default": "./src/index.js" } },
+  "files": ["src", "index.d.ts", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "example": "node examples/eval-demo.js"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": ["agent", "llm", "tool-calling", "evals", "harness", "structured-output"],
+  "repository": { "type": "git", "url": "git+https://github.com/kwanzaX/harness-kit.git" },
+  "author": "João Kwanza",
+  "license": "MIT"
+}
